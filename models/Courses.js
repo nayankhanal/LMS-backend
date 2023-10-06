@@ -11,9 +11,6 @@ const Courses = sequelize.define("courses", {
   },
 });
 
-// Courses.hasOne(Syllabus);
-// Syllabus.belongsTo(Courses);
-
 Courses.hasMany(Syllabus);
 Syllabus.belongsTo(Courses);
 

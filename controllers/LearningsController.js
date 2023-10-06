@@ -5,8 +5,6 @@ const getLearnings = async (req, res) => {
   //here loggedinId is imaginary name. Here we receive the user's id who is logged in
   //right now(may be from local storage or cookies)
   const loggedinId = req.data.id;
-  // console.log(req.data);
-  // console.log(loggedinId);
 
   const allCourseIds = [];
 
@@ -18,7 +16,6 @@ const getLearnings = async (req, res) => {
     isAssignedCourses.forEach((element) => {
       allCourseIds.push(element.courseId);
     });
-    // console.log(allCourseIds);
     const assignedCourses = await Courses.findAll({ id: allCourseIds });
     res.send({ message: true, data: assignedCourses });
   } else {

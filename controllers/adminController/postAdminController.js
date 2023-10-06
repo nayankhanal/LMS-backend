@@ -3,7 +3,6 @@ const CourseDetails = require("../../models/CourseDetails");
 const Courses = require("../../models/Courses");
 
 const createStudySyllabus = (req, res) => {
-  // const { unit, content, courseId } = req.body;
   const syllabusArray = req.body;
 
   try {

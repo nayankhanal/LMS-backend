@@ -51,9 +51,6 @@ const loginUser = async (req, res) => {
                 { expiresIn: "48h" }
               );
 
-              // console.log(accessToken);
-              // console.log(refreshToken);
-
               if (accessToken && refreshToken) {
                 res.send({
                   response: "Successfully logged in.",
@@ -68,37 +65,6 @@ const loginUser = async (req, res) => {
                   message: false,
                 });
               }
-              // jwt.sign(
-              //   {
-              //     id: found.id,
-              //     email: found.email,
-              //     password: found.password,
-              //   },
-              //   process.env.JWT_SECRET_KEY,
-              //   { expiresIn: process.env.JWT_EXPIREY },
-              //   (err, token) => {
-              //     if (err) {
-              //       res.send({
-              //         response: "Login Unsuccessfull.",
-              //         message: false,
-              //       });
-              //     } else {
-              //       if (token) {
-              //         res.send({
-              //           response: "Successfully logged in.",
-              //           token: token,
-              //           message: true,
-              //         });
-              //       } else {
-              //         res.send({
-              //           response:
-              //             "Something gone wrong while generating token. Token didnot received.",
-              //           message: false,
-              //         });
-              //       }
-              //     }
-              //   }
-              // );
             } else {
               res.send({
                 response: "Password didnot match.",
@@ -107,8 +73,6 @@ const loginUser = async (req, res) => {
             }
           }
         });
-        //   }
-        // });
       }
     })
     .catch((err) => {
